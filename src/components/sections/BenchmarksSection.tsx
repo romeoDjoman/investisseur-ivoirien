@@ -33,8 +33,8 @@ export function BenchmarksSection() {
     return (
         <section className="py-24 px-6 relative max-w-7xl mx-auto">
             <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-serif font-medium mb-4 text-white">Faster than the rest</h2>
-                <p className="text-white/50 text-lg">Build and deploy applications at unprecedented speeds.</p>
+                <h2 className="text-4xl md:text-5xl font-serif font-medium mb-4 text-white">Pourquoi nous choisir ?</h2>
+                <p className="text-white/50 text-lg">Profitez d'un accompagnement sur mesure pour sécuriser et rentabiliser vos investissements.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -49,12 +49,12 @@ export function BenchmarksSection() {
                 >
                     <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 blur-[80px] rounded-full group-hover:bg-brand/20 transition-colors duration-500" />
 
-                    <h3 className="text-xl font-medium text-white mb-8 relative z-10">Time to Production (Weeks)</h3>
+                    <h3 className="text-xl font-medium text-white mb-8 relative z-10">Taux de réussite sécurisé (%)</h3>
 
                     <div className="flex flex-col gap-6 relative z-10 border-l-2 border-white/10 pl-4 py-2">
-                        <BenchmarkBar label="Traditional Agency" value={95} />
-                        <BenchmarkBar label="Low-Code Builders" value={60} />
-                        <BenchmarkBar label="Orchids" value={15} isBrand />
+                        <BenchmarkBar label="Investisseur isolé" value={35} />
+                        <BenchmarkBar label="Formations classiques" value={60} />
+                        <BenchmarkBar label="L'Investisseur Ivoirien" value={95} isBrand />
                     </div>
                 </motion.div>
 
@@ -68,12 +68,12 @@ export function BenchmarksSection() {
                 >
                     <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 blur-[80px] rounded-full group-hover:bg-brand/20 transition-colors duration-500" />
 
-                    <h3 className="text-xl font-medium text-white mb-8 relative z-10">Development Cost ($)</h3>
+                    <h3 className="text-xl font-medium text-white mb-8 relative z-10">Temps de rentabilité et maîtrise</h3>
 
                     <div className="flex flex-col gap-6 relative z-10 border-l-2 border-white/10 pl-4 py-2">
-                        <BenchmarkBar label="Traditional Agency" value={100} />
-                        <BenchmarkBar label="Low-Code Builders" value={45} />
-                        <BenchmarkBar label="Orchids" value={10} isBrand />
+                        <BenchmarkBar label="Investisseur isolé" value={100} />
+                        <BenchmarkBar label="Formations classiques" value={65} />
+                        <BenchmarkBar label="L'Investisseur Ivoirien" value={20} isBrand />
                     </div>
                 </motion.div>
 

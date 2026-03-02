@@ -1,29 +1,36 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../../lib/utils';
-import { Code, Layout, Settings } from 'lucide-react';
+import { Home, Tractor, TrendingUp, Briefcase } from 'lucide-react';
 
 const features = [
     {
-        id: 'build',
-        title: 'Visual Builder',
-        description: 'Design your UI exactly how you want it with an intuitive drag-and-drop interface powered by AI.',
-        icon: Layout,
+        id: 'immobilier',
+        title: 'Immobilier & Foncier',
+        description: 'Démarches administratives, achat de terrains et parcelles avec un suivi complet et personnalisé.',
+        icon: Home,
         imageColor: 'from-blue-500/20 to-purple-500/20',
     },
     {
-        id: 'logic',
-        title: 'Custom Logic',
-        description: 'Write custom JavaScript or let our AI generate complex business logic, API integrations, and data transformations.',
-        icon: Code,
+        id: 'agriculture',
+        title: 'Agriculture & Élevage',
+        description: 'Formation et accompagnement dans l\'élevage (volaille, porc) et la transformation agricole/industrielle.',
+        icon: Tractor,
         imageColor: 'from-brand/20 to-orange-500/20',
     },
     {
-        id: 'deploy',
-        title: 'One-Click Deploy',
-        description: 'Push your application to production across global edge networks with a single click. Zero configuration required.',
-        icon: Settings,
+        id: 'bourse',
+        title: 'Bourse & Finance',
+        description: 'Formations sur mesure pour l\'investissement sur la BRVM, les marchés émergents et internationaux.',
+        icon: TrendingUp,
         imageColor: 'from-green-500/20 to-emerald-500/20',
+    },
+    {
+        id: 'entrepreneuriat',
+        title: 'Entrepreneuriat & Mobilité',
+        description: 'Accompagnement pour vos projets entrepreneuriaux et opportunités dans la mobilité et le transport (VTC).',
+        icon: Briefcase,
+        imageColor: 'from-pink-500/20 to-rose-500/20',
     }
 ];
 
@@ -43,8 +50,8 @@ export function FeaturesSection() {
                         className="mb-6"
                     >
                         <h2 className="text-4xl md:text-5xl font-serif font-medium mb-6 text-white leading-tight">
-                            Everything you need <br />
-                            <span className="text-white/40">to build anything.</span>
+                            Découvrez nos offres <br />
+                            <span className="text-white/40">Tout pour réussir votre investissement.</span>
                         </h2>
                     </motion.div>
 
@@ -135,7 +142,7 @@ export function FeaturesSection() {
                                             <div className="w-3 h-3 rounded-full bg-white/20" />
                                         </div>
                                         <div className="ml-4 px-3 py-1 bg-black/40 rounded-md text-[10px] text-white/50 font-mono">
-                                            {feature.id}.tsx
+                                            {feature.title}
                                         </div>
                                     </div>
                                     {/* Mock Window Content */}

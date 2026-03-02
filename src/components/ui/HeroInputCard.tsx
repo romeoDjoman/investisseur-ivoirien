@@ -3,24 +3,24 @@ import { motion } from 'framer-motion';
 import { Sparkles, ArrowUp } from 'lucide-react';
 
 const prompts = [
-    "Build a CRM for real estate agents...",
-    "Create an inventory management dashboard...",
-    "Design a social network for pet owners...",
-    "Generate a booking system for my barbershop...",
+    "Je souhaite investir dans l'immobilier à Abidjan...",
+    "Quelles sont les démarches pour acquérir un terrain agricole ?",
+    "Je veux me former sur la bourse régionale (BRVM)...",
+    "Comment lancer mon projet d'élevage de volailles...",
 ];
 
 const tags = [
-    { id: 'web', label: 'Web App' },
-    { id: 'mobile', label: 'Mobile App' },
-    { id: 'ai', label: 'AI Agent' },
-    { id: 'api', label: 'Internal API' },
+    { id: 'immobilier', label: 'Immobilier' },
+    { id: 'agriculture', label: 'Agriculture' },
+    { id: 'bourse', label: 'Bourse' },
+    { id: 'entrepreneuriat', label: 'Entrepreneuriat' },
 ];
 
 export function HeroInputCard() {
     const [promptIndex, setPromptIndex] = useState(0);
     const [displayText, setDisplayText] = useState('');
     const [isTyping, setIsTyping] = useState(true);
-    const [activeTag, setActiveTag] = useState('web');
+    const [activeTag, setActiveTag] = useState('immobilier');
 
     useEffect(() => {
         let timeout: ReturnType<typeof setTimeout>;

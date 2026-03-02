@@ -4,10 +4,11 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 const navLinks = [
-    { label: 'Features', href: '#features' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'Blog', href: '#blog' },
-    { label: 'Docs', href: '#docs' },
+    { label: 'Accueil', href: '#' },
+    { label: 'Formations', href: '#formations' },
+    { label: 'Conférences', href: '#conferences' },
+    { label: 'Coaching', href: '#coaching' },
+    { label: 'Contact', href: '#contact' },
 ];
 
 export function Navbar() {
@@ -33,9 +34,9 @@ export function Navbar() {
                 {/* Logo */}
                 <a href="/" className="flex items-center gap-2 group">
                     <div className="w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-black font-bold text-xl group-hover:scale-105 transition-transform">
-                        O
+                        I
                     </div>
-                    <span className="font-serif text-xl font-medium tracking-wide">Orchids</span>
+                    <span className="font-serif text-xl font-medium tracking-wide">L'Investisseur Ivoirien</span>
                 </a>
 
                 {/* Desktop Nav */}
@@ -56,10 +57,10 @@ export function Navbar() {
                 {/* Auth Buttons */}
                 <div className="hidden md:flex items-center gap-4">
                     <a href="#login" className="text-sm text-white/70 hover:text-white transition-colors">
-                        Log in
+                        Se connecter
                     </a>
                     <button className="bg-white/10 hover:bg-white/20 text-white text-sm px-4 py-2 rounded-full font-medium transition-all flex items-center gap-2 group">
-                        Get Started
+                        Nous rejoindre
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
                 </div>
@@ -95,10 +96,10 @@ export function Navbar() {
                             ))}
                             <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-white/10">
                                 <a href="#login" className="text-white/70 hover:text-white transition-colors text-center py-2">
-                                    Log in
+                                    Se connecter
                                 </a>
                                 <button className="bg-white text-black text-sm px-4 py-3 rounded-xl font-medium transition-all w-full">
-                                    Get Started
+                                    Nous rejoindre
                                 </button>
                             </div>
                         </nav>
