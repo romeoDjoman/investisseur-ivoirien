@@ -1,0 +1,36 @@
+name: Deploy to Hostinger via FTP
+
+on:
+  push:
+    branches:
+      - main # Déclenche le déploiement uniquement sur la branche 'main'
+
+jobs:
+  build-and-deploy:
+    name: 🚀 Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Obtenir le code source
+        uses: actions/checkout@v4
+
+      - name: 🛠️ Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x' # Version recommandée
+
+      - name: 📦 Installer les dépendances
+        run: npm install
+
+      - name: 🏗️ Compiler le projet (Build)
+        run: npm run build
+
+      - name: 📂 Déployer sur Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          # Optionnel : si votre compte FTP ne pointe pas directement sur public_html, commentez et modifiez la ligne suivante :
+          # server-dir: /public_html/ 

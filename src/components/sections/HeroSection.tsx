@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { HeroCarousel } from '../ui/HeroCarousel';
 
 export function HeroSection() {
     return (
@@ -8,28 +7,76 @@ export function HeroSection() {
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand/20 blur-[120px] rounded-full pointer-events-none opacity-50" />
 
             <div className="max-w-7xl mx-auto text-center relative z-10">
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1, duration: 0.8 }}
-                    className="text-5xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight mb-6 text-white leading-tight uppercase"
-                >
-                    L'Indépendance Financière <br />
-                    <span className="text-white/40 normal-case">En Côte d'Ivoire.</span>
-                </motion.h1>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
+                    {/* Main Left Section (Title + Slider equivalent) */}
+                    <div className="lg:col-span-2 relative aspect-[4/3] sm:aspect-video lg:aspect-[16/10] bg-[#1a1a1a]/80 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden flex flex-col justify-end p-8 md:p-12">
+                        {/* City/Architecture Background */}
+                        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1548690312-e3b507d8c110?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 mix-blend-luminosity" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.8 }}
-                    className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto mb-16"
-                >
-                    La plateforme qui vous donnera toutes les clefs dont vous avez besoin afin d'investir au pays, de sécuriser votre patrimoine et de réussir de façon pérenne.
-                </motion.p>
+                        {/* Prominent Orange Title Block */}
+                        <div className="relative z-10">
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.1, duration: 0.8 }}
+                                className="bg-brand py-6 pl-8 pr-12 w-fit mb-6"
+                            >
+                                <h1 className="text-4xl md:text-5xl lg:text-7xl font-sans font-bold tracking-tight text-white leading-none uppercase">
+                                    COTE-D'<br />IVOIRE
+                                </h1>
+                            </motion.div>
 
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2, duration: 0.8 }}
+                                className="text-lg md:text-xl text-white/80 max-w-xl"
+                            >
+                                L'Indépendance Financière. La plateforme qui vous donnera toutes les clefs dont vous avez besoin afin d'investir au pays.
+                            </motion.p>
+                        </div>
+                    </div>
 
+                    {/* Right Column (2 Cards) */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 lg:h-full">
+                        {/* Card 1: Conférences */}
+                        <div className="bg-white rounded-2xl overflow-hidden flex flex-col group h-full">
+                            <div className="h-40 bg-[url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80')] bg-cover bg-center" />
+                            <div className="p-6 flex flex-col flex-1 items-center text-center justify-between">
+                                <div>
+                                    <h3 className="text-xl font-bold text-black mb-2 uppercase">Conférences</h3>
+                                    <p className="text-gray-600 text-sm">Réservez votre place dès maintenant !</p>
+                                </div>
+                                <div className="mt-4 w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-brand transition-colors cursor-pointer">
+                                    <span className="text-brand text-2xl font-light">→</span>
+                                </div>
+                            </div>
+                        </div>
 
-                <HeroCarousel />
+                        {/* Card 2: Livret Gratuit */}
+                        <div className="bg-white rounded-2xl overflow-hidden flex flex-col group h-full relative">
+                            {/* Livret Cover preview taking right half */}
+                            <div className="absolute right-0 top-0 bottom-0 w-[45%] bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80')] bg-cover bg-center">
+                                <div className="absolute inset-0 bg-gradient-to-b from-brand/90 to-orange-600/90 mix-blend-multiply" />
+                                <div className="absolute bottom-4 left-4 right-4 text-white p-2">
+                                    <div className="text-[10px] uppercase font-bold tracking-wider mb-1 opacity-80">Construire l'Afrique de Demain</div>
+                                    <div className="text-xs font-bold leading-tight">10 BONNES RAISONS DE DEVENIR ENTREPRENEUR</div>
+                                </div>
+                            </div>
+
+                            <div className="w-[55%] p-6 flex flex-col flex-1 items-center justify-between text-center bg-white z-10 h-full">
+                                <div>
+                                    <h3 className="text-lg font-bold text-black mb-2">Livret Gratuit</h3>
+                                    <p className="text-gray-600 text-[13px] leading-tight">10 bonnes raisons de devenir entrepreneur</p>
+                                </div>
+                                <div className="mt-4 w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-brand transition-colors cursor-pointer">
+                                    <span className="text-brand text-2xl font-light">→</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 {/* Services Cards (Replacing Social Proof) */}
                 <motion.div
