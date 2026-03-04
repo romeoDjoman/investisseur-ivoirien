@@ -5,31 +5,31 @@ import { Home, Tractor, TrendingUp, Briefcase } from 'lucide-react';
 
 const features = [
     {
-        id: 'immobilier',
-        title: 'Immobilier & Foncier',
-        description: 'Démarches administratives, achat de terrains et parcelles avec un suivi complet et personnalisé.',
-        icon: Home,
+        id: 'entrepreneuriat',
+        title: 'Entrepreneuriat & Vente',
+        description: 'Passez de l\'idée au business rentable. Apprenez à vendre comme un pro et développez vos sources de revenus au pays.',
+        icon: Briefcase,
         imageColor: 'from-blue-500/20 to-purple-500/20',
     },
     {
         id: 'agriculture',
         title: 'Agriculture & Élevage',
-        description: 'Formation et accompagnement dans l\'élevage (volaille, porc) et la transformation agricole/industrielle.',
+        description: 'Focus Agrobusiness : Découvrez pourquoi le poulet de chair est l\'or vert de l\'Afrique et comment rentabiliser vos exploitations.',
         icon: Tractor,
         imageColor: 'from-brand/20 to-orange-500/20',
     },
     {
-        id: 'bourse',
-        title: 'Bourse & Finance',
-        description: 'Formations sur mesure pour l\'investissement sur la BRVM, les marchés émergents et internationaux.',
+        id: 'finance',
+        title: 'Éducation Financière',
+        description: 'Bourse, épargne, et intelligence financière. Comprenez les règles de l\'argent pour bâtir un patrimoine solide.',
         icon: TrendingUp,
         imageColor: 'from-green-500/20 to-emerald-500/20',
     },
     {
-        id: 'entrepreneuriat',
-        title: 'Entrepreneuriat & Mobilité',
-        description: 'Accompagnement pour vos projets entrepreneuriaux et opportunités dans la mobilité et le transport (VTC).',
-        icon: Briefcase,
+        id: 'immobilier',
+        title: 'Immobilier & Foncier',
+        description: 'Sécurisation juridique, démarches administratives et achat de terrains avec un suivi complet et personnalisé.',
+        icon: Home,
         imageColor: 'from-pink-500/20 to-rose-500/20',
     }
 ];
@@ -146,13 +146,114 @@ export function FeaturesSection() {
                                         </div>
                                     </div>
                                     {/* Mock Window Content */}
-                                    <div className="flex-1 p-6 flex flex-col gap-4">
-                                        <div className="w-3/4 h-8 rounded-lg bg-white/5 animate-pulse" />
-                                        <div className="w-full h-24 rounded-lg bg-white/5 animate-pulse" />
-                                        <div className="flex gap-4 mt-auto">
-                                            <div className="w-1/2 h-8 rounded-lg bg-brand/20 border border-brand/30" />
-                                            <div className="w-1/4 h-8 rounded-lg bg-white/5" />
-                                        </div>
+                                    <div className="flex-1 p-6 flex flex-col gap-4 relative overflow-hidden">
+
+                                        {feature.id === 'immobilier' && (
+                                            <>
+                                                <div className="grid grid-cols-2 gap-4 h-full">
+                                                    <div className="col-span-2 h-1/2 rounded-xl bg-blue-500/10 border border-blue-500/20 p-4 flex flex-col">
+                                                        <div className="text-xs text-blue-500/70 mb-2 uppercase tracking-wider font-semibold">Parcelles Sécurisées</div>
+                                                        <div className="flex items-end gap-2 mb-4">
+                                                            <div className="text-4xl font-serif text-white">45</div>
+                                                            <div className="text-sm text-green-500 mb-1">Dossiers validés</div>
+                                                        </div>
+                                                        <div className="mt-auto flex gap-2">
+                                                            <div className="flex-1 h-2 bg-blue-500/50 rounded-full" />
+                                                            <div className="flex-1 h-2 bg-blue-500/50 rounded-full" />
+                                                            <div className="flex-1 h-2 bg-white/10 rounded-full" />
+                                                        </div>
+                                                    </div>
+                                                    <div className="rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-col gap-2">
+                                                        <Home className="w-6 h-6 text-white/40" />
+                                                        <div className="w-1/2 h-2 rounded bg-white/20" />
+                                                    </div>
+                                                    <div className="rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-col gap-2">
+                                                        <div className="w-10 h-10 rounded-full border-2 border-dashed border-white/20 flex items-center justify-center text-white/40">+</div>
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )}
+
+                                        {feature.id === 'finance' && (
+                                            <>
+                                                <div className="flex justify-between items-center mb-4">
+                                                    <div className="flex gap-3 items-center">
+                                                        <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
+                                                            <TrendingUp className="w-4 h-4 text-green-500" />
+                                                        </div>
+                                                        <div>
+                                                            <div className="text-sm font-medium text-white/90">Portefeuille Actif</div>
+                                                            <div className="text-xs text-green-500">+12.5% YoY</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="w-24 h-8 rounded-full bg-white/10" />
+                                                </div>
+                                                <div className="flex-1 rounded-xl border border-white/10 bg-black/40 relative overflow-hidden">
+                                                    {/* Fake Line Chart SVG */}
+                                                    <svg className="absolute inset-0 w-full h-full preserve-3d" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                                        <defs>
+                                                            <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+                                                                <stop offset="0%" stopColor="rgba(34, 197, 94, 0.4)" />
+                                                                <stop offset="100%" stopColor="rgba(34, 197, 94, 0)" />
+                                                            </linearGradient>
+                                                        </defs>
+                                                        <motion.path
+                                                            initial={{ pathLength: 0, opacity: 0 }}
+                                                            animate={{ pathLength: 1, opacity: 1 }}
+                                                            transition={{ duration: 1.5, ease: "easeInOut" }}
+                                                            d="M0,80 Q10,70 20,75 T40,60 T60,40 T80,30 T100,10"
+                                                            fill="none"
+                                                            stroke="#22c55e"
+                                                            strokeWidth="2"
+                                                        />
+                                                        <motion.path
+                                                            initial={{ opacity: 0 }}
+                                                            animate={{ opacity: 1 }}
+                                                            transition={{ delay: 1, duration: 1 }}
+                                                            d="M0,80 Q10,70 20,75 T40,60 T60,40 T80,30 T100,10 L100,100 L0,100 Z"
+                                                            fill="url(#grad)"
+                                                        />
+                                                    </svg>
+                                                </div>
+                                            </>
+                                        )}
+
+                                        {feature.id === 'entrepreneuriat' && (
+                                            <>
+                                                <div className="flex justify-between items-center mb-2">
+                                                    <div className="w-1/3 h-6 rounded-md bg-white/10" />
+                                                    <div className="w-1/4 h-6 rounded-md border border-white/20 bg-pink-500/20" />
+                                                </div>
+                                                <div className="w-full aspect-video rounded-xl bg-white/5 border border-white/10 flex items-center justify-center relative overflow-hidden">
+                                                    <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center mix-blend-luminosity" />
+                                                    <div className="w-12 h-12 rounded-full border-2 border-brand bg-brand/20 flex items-center justify-center backdrop-blur-sm z-10">
+                                                        <Briefcase className="w-5 h-5 text-brand" />
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-4 mt-auto pt-2">
+                                                    <div className="flex-1 h-12 rounded-lg bg-white/5 border border-white/5 flex flex-col justify-center px-4">
+                                                        <div className="w-1/2 h-2 rounded bg-white/20 mb-2" />
+                                                        <div className="w-3/4 h-2 rounded bg-white/10" />
+                                                    </div>
+                                                    <div className="flex-1 h-12 rounded-lg bg-white/5 border border-white/5 flex flex-col justify-center px-4">
+                                                        <div className="w-1/2 h-2 rounded bg-white/20 mb-2" />
+                                                        <div className="w-3/4 h-2 rounded bg-white/10" />
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )}
+
+                                        {/* Fallback if no specific feature matches visually */}
+                                        {!['immobilier', 'agriculture', 'bourse', 'entrepreneuriat'].includes(feature.id) && (
+                                            <>
+                                                <div className="w-3/4 h-8 rounded-lg bg-white/5 animate-pulse" />
+                                                <div className="w-full h-24 rounded-lg bg-white/5 animate-pulse" />
+                                                <div className="flex gap-4 mt-auto">
+                                                    <div className="w-1/2 h-8 rounded-lg bg-brand/20 border border-brand/30" />
+                                                    <div className="w-1/4 h-8 rounded-lg bg-white/5" />
+                                                </div>
+                                            </>
+                                        )}
                                     </div>
                                 </motion.div>
                             )

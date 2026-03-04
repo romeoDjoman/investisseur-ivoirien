@@ -1,8 +1,10 @@
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { HeroSection } from './components/sections/HeroSection';
-import { BenchmarksSection } from './components/sections/BenchmarksSection';
+import { LeadMagnetSection } from './components/sections/LeadMagnetSection';
 import { FeaturesSection } from './components/sections/FeaturesSection';
+import { LatestContentSection } from './components/sections/LatestContentSection';
+import { CTASection } from './components/sections/CTASection';
 
 function App() {
   return (
@@ -10,8 +12,10 @@ function App() {
       <Navbar />
       <main className="flex-1">
         <HeroSection />
-        <BenchmarksSection />
+        <LeadMagnetSection />
         <FeaturesSection />
+        <LatestContentSection />
+        <CTASection />
       </main>
       <Footer />
     </div>
