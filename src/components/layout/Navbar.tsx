@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 const navLinks = [
-    { label: 'Accueil', href: '#' },
-    { label: 'Formations', href: '#formations' },
-    { label: 'Conférences', href: '#conferences' },
-    { label: 'Coaching', href: '#coaching' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Accueil', href: '/' },
+    { label: 'Formations', href: '/formations' },
+    { label: 'Conférences', href: '/conferences' },
+    { label: 'Coaching', href: '/coaching' },
+    { label: 'Contact', href: '/contact' },
 ];
 
 export function Navbar() {
@@ -32,25 +33,23 @@ export function Navbar() {
         >
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
-                <a href="/" className="flex items-center gap-2 group">
-                    <div className="w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-black font-bold text-xl group-hover:scale-105 transition-transform">
-                        I
-                    </div>
+                <Link to="/" className="flex items-center gap-2 group">
+                    <img src="/logo.png" alt="Logo L'Investisseur Ivoirien" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform bg-white/10 rounded-lg p-1" />
                     <span className="font-serif text-xl font-medium tracking-wide">L'Investisseur Ivoirien</span>
-                </a>
+                </Link>
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8">
                     {navLinks.map((link) => (
-                        <a
+                        <Link
                             key={link.label}
-                            href={link.href}
+                            to={link.href}
                             className="text-sm text-white/70 hover:text-white transition-colors relative group"
                         >
                             {link.label}
                             {/* Subtle underline animation */}
                             <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand transition-all duration-300 group-hover:w-full rounded-full"></span>
-                        </a>
+                        </Link>
                     ))}
                 </nav>
 
@@ -85,14 +84,14 @@ export function Navbar() {
                     >
                         <nav className="flex flex-col gap-4 p-6">
                             {navLinks.map((link) => (
-                                <a
+                                <Link
                                     key={link.label}
-                                    href={link.href}
+                                    to={link.href}
                                     className="text-white/70 hover:text-white transition-colors font-medium text-lg"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
                                     {link.label}
-                                </a>
+                                </Link>
                             ))}
                             <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-white/10">
                                 <a href="#login" className="text-white/70 hover:text-white transition-colors text-center py-2">

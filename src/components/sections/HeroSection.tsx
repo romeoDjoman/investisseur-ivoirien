@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export function HeroSection() {
     return (
@@ -41,7 +42,7 @@ export function HeroSection() {
                     {/* Right Column (2 Cards) */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 lg:h-full">
                         {/* Card 1: Conférences */}
-                        <div className="bg-white rounded-2xl overflow-hidden flex flex-col group h-full">
+                        <Link to="/conferences" className="bg-white rounded-2xl overflow-hidden flex flex-col group h-full cursor-pointer">
                             <div className="h-40 bg-[url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80')] bg-cover bg-center" />
                             <div className="p-6 flex flex-col flex-1 items-center text-center justify-between">
                                 <div>
@@ -52,10 +53,10 @@ export function HeroSection() {
                                     <span className="text-brand text-2xl font-light">→</span>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
 
                         {/* Card 2: Livret Gratuit */}
-                        <div className="bg-white rounded-2xl overflow-hidden flex flex-col group h-full relative">
+                        <Link to="/contact" className="bg-white rounded-2xl overflow-hidden flex flex-col group h-full relative cursor-pointer">
                             {/* Livret Cover preview taking right half */}
                             <div className="absolute right-0 top-0 bottom-0 w-[45%] bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80')] bg-cover bg-center">
                                 <div className="absolute inset-0 bg-gradient-to-b from-brand/90 to-orange-600/90 mix-blend-multiply" />
@@ -74,7 +75,7 @@ export function HeroSection() {
                                     <span className="text-brand text-2xl font-light">→</span>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 </div>
 
@@ -102,9 +103,9 @@ export function HeroSection() {
                                 <p className="text-white/60 text-sm mb-8 flex-1 leading-relaxed">
                                     Vous souhaitez <span className="font-semibold text-white">démarrer votre entreprise</span> ? Découvrez <span className="font-semibold text-white">les formations</span> que nous proposons.
                                 </p>
-                                <button className="w-full py-3 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-xl transition-colors duration-300">
+                                <Link to="/formations" className="w-full py-3 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-xl transition-colors duration-300 block">
                                     Accéder
-                                </button>
+                                </Link>
                             </div>
                         </div>
 
@@ -116,9 +117,9 @@ export function HeroSection() {
                                 <p className="text-white/60 text-sm mb-8 flex-1 leading-relaxed">
                                     Profitez d'un <span className="font-semibold text-white">accompagnement personnalisé</span> pour approfondir vos connaissances.
                                 </p>
-                                <button className="w-full py-3 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-xl transition-colors duration-300">
+                                <Link to="/coaching" className="w-full py-3 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-xl transition-colors duration-300 block">
                                     Découvrir
-                                </button>
+                                </Link>
                             </div>
                         </div>
 
@@ -130,9 +131,9 @@ export function HeroSection() {
                                 <p className="text-white/60 text-sm mb-8 flex-1 leading-relaxed">
                                     Investir au pays arrive chez vous. Consultez le calendrier des évènements et <span className="font-semibold text-white">réservez votre place</span>.
                                 </p>
-                                <button className="w-full py-3 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-xl transition-colors duration-300">
+                                <Link to="/conferences" className="w-full py-3 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-xl transition-colors duration-300 block">
                                     Réserver
-                                </button>
+                                </Link>
                             </div>
                         </div>
 
@@ -144,9 +145,9 @@ export function HeroSection() {
                                 <p className="text-white/60 text-sm mb-8 flex-1 leading-relaxed">
                                     Vous souhaitez <span className="font-semibold text-white">gagner en visibilité</span> ou <span className="font-semibold text-white">sponsoriser notre contenu</span> ? Contactez-nous !
                                 </p>
-                                <button className="w-full py-3 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-xl transition-colors duration-300">
+                                <Link to="/contact" className="w-full py-3 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-xl transition-colors duration-300 block">
                                     Nous contacter
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

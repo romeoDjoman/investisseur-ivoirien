@@ -1,21 +1,22 @@
 import { Twitter, Github, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const footerLinks = {
     Investissements: [
-        { label: 'Immobilier', href: '#' },
-        { label: 'Agriculture', href: '#' },
-        { label: 'Bourse', href: '#' },
-        { label: 'Mobilité & VTC', href: '#' },
+        { label: 'Immobilier', href: '/investissements/immobilier' },
+        { label: 'Agriculture', href: '/investissements/agriculture' },
+        { label: 'Bourse', href: '/investissements/bourse' },
+        { label: 'Mobilité & VTC', href: '/investissements/mobilite' },
     ],
     Accompagnement: [
-        { label: 'Formations', href: '#' },
-        { label: 'Coaching', href: '#' },
-        { label: 'Conférences', href: '#' },
-        { label: 'Retours d\'expériences', href: '#' },
+        { label: 'Formations', href: '/formations' },
+        { label: 'Coaching', href: '/coaching' },
+        { label: 'Conférences', href: '/conferences' },
+        { label: 'Retours d\'expériences', href: '/temoignages' },
     ],
     Légal: [
-        { label: 'Politique de confidentialité', href: '#' },
-        { label: 'Conditions générales', href: '#' },
+        { label: 'Politique de confidentialité', href: '/legal/confidentialite' },
+        { label: 'Conditions générales', href: '/legal/conditions' },
     ],
 };
 
@@ -27,12 +28,10 @@ export function Footer() {
 
                     {/* Brand Column */}
                     <div className="lg:col-span-2">
-                        <a href="/" className="flex items-center gap-2 mb-4 group inline-flex">
-                            <div className="w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-black font-bold text-xl">
-                                I
-                            </div>
+                        <Link to="/" className="flex items-center gap-2 mb-4 group inline-flex">
+                            <img src="/logo.png" alt="Logo Investisseur Ivoirien" className="w-10 h-10 object-contain group-hover:scale-105 transition-transform bg-white/10 rounded-lg p-1" />
                             <span className="font-serif text-xl font-medium tracking-wide text-white group-hover:text-white/80 transition-colors">Investisseur Ivoirien</span>
-                        </a>
+                        </Link>
                         <p className="text-white/50 text-sm max-w-xs mb-6 leading-relaxed">
                             Votre plateforme pour découvrir toutes les clés de l'investissement en Côte d'Ivoire. Immobilier, Bourse, Agriculture et plus encore.
                         </p>
@@ -56,9 +55,9 @@ export function Footer() {
                             <ul className="flex flex-col gap-3">
                                 {links.map((link) => (
                                     <li key={link.label}>
-                                        <a href={link.href} className="text-white/50 hover:text-white/90 text-sm transition-colors">
+                                        <Link to={link.href} className="text-white/50 hover:text-white/90 text-sm transition-colors">
                                             {link.label}
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>

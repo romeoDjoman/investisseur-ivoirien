@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function CTASection() {
     return (
@@ -27,14 +28,14 @@ export function CTASection() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
-                        <button className="w-full sm:w-auto px-8 py-4 bg-white text-black rounded-full font-medium flex items-center justify-center gap-2 hover:bg-brand transition-colors group">
+                        <Link to="/coaching" className="w-full sm:w-auto px-8 py-4 bg-white text-black rounded-full font-medium flex items-center justify-center gap-2 hover:bg-brand transition-colors group">
                             <Calendar className="w-5 h-5" />
                             Réserver un Coaching
-                        </button>
-                        <button className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-medium flex items-center justify-center gap-2 hover:bg-white/10 transition-colors group">
+                        </Link>
+                        <Link to="/formations" className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-medium flex items-center justify-center gap-2 hover:bg-white/10 transition-colors group">
                             Voir les Formations
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </button>
+                        </Link>
                     </div>
                 </div>
 
