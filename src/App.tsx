@@ -3,6 +3,9 @@ import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Home } from './pages/Home';
 import { Formations } from './pages/Formations';
+import { FormationDetails } from './pages/FormationDetails';
+import { Cart } from './pages/Cart';
+import { Checkout } from './pages/Checkout';
 import { Conferences } from './pages/Conferences';
 import { Coaching } from './pages/Coaching';
 import { Contact } from './pages/Contact';
@@ -22,6 +25,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/formations" element={<Formations />} />
+          <Route path="/formations/:id" element={<FormationDetails />} />
+          <Route path="/panier" element={<Cart />} />
+          <Route path="/caisse" element={<Checkout />} />
           <Route path="/conferences" element={<Conferences />} />
           <Route path="/coaching" element={<Coaching />} />
           <Route path="/contact" element={<Contact />} />

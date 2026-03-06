@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export function Temoignages() {
     const testimonials = [
@@ -45,27 +46,46 @@ export function Temoignages() {
             <div className="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-brand/10 to-transparent pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="flex flex-col items-center justify-center gap-6 mb-20 text-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="flex flex-col items-center justify-center gap-6 mb-20 text-center"
+                >
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white uppercase leading-tight">
                         Ils ont investi.<br />Écoutez-les.
                     </h1>
                     <p className="text-xl text-white/80 max-w-3xl leading-relaxed font-light mt-4">
                         Des témoignages authentiques d'ivoiriens de la diaspora et du pays qui partagent leur parcours, leurs succès et leurs leçons apprises.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Filters Mock */}
-                <div className="flex flex-wrap justify-center gap-3 mb-16">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="flex flex-wrap justify-center gap-3 mb-16"
+                >
                     {['Tous', 'Immobilier', 'Agriculture', 'Bourse', 'Mobilité'].map((filter, i) => (
                         <button key={i} className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${i === 0 ? 'bg-white/20 text-white' : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white'}`}>
                             {filter}
                         </button>
                     ))}
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-24">
                     {testimonials.map((testi, index) => (
-                        <div key={index} className="bg-[#1a1a1a] rounded-3xl overflow-hidden border border-white/10 group cursor-pointer hover:border-brand/40 transition-colors">
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="bg-[#1a1a1a] rounded-3xl overflow-hidden border border-white/10 group cursor-pointer hover:border-brand/40 transition-colors"
+                        >
                             {/* Video Thumbnail Mock */}
                             <div className="h-64 relative overflow-hidden">
                                 <img
@@ -101,12 +121,18 @@ export function Temoignages() {
                                     <span className="text-brand text-sm hover:underline">Voir l'interview complet →</span>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 
                 {/* Appel à témoignage */}
-                <div className="max-w-4xl mx-auto bg-brand/10 px-8 py-12 md:p-16 rounded-3xl border border-brand/20 text-center relative overflow-hidden">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
+                    className="max-w-4xl mx-auto bg-brand/10 px-8 py-12 md:p-16 rounded-3xl border border-brand/20 text-center relative overflow-hidden"
+                >
                     <div className="absolute top-0 right-0 w-64 h-64 bg-brand/20 blur-[100px] rounded-full"></div>
                     <div className="relative z-10">
                         <h2 className="text-3xl font-serif text-white mb-6">Partagez votre succès !</h2>
@@ -117,7 +143,7 @@ export function Temoignages() {
                             Je partage mon témoignage
                         </Link>
                     </div>
-                </div>
+                </motion.div>
 
             </div>
         </div>

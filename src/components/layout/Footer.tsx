@@ -1,5 +1,7 @@
-import { Twitter, Github, Linkedin } from 'lucide-react';
+import { useState } from 'react';
+import { Twitter, Github, Linkedin, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const footerLinks = {
     Navigation: [
@@ -19,9 +21,58 @@ const footerLinks = {
 };
 
 export function Footer() {
+    const [email, setEmail] = useState('');
+    const [isSubscribed, setIsSubscribed] = useState(false);
+
+    const handleSubscribe = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (email) {
+            setIsSubscribed(true);
+            setEmail('');
+        }
+    };
+
     return (
         <footer className="border-t border-white/10 bg-[#141414] pt-16 pb-8">
-            <div className="max-w-7xl mx-auto px-6">
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6 }}
+                className="max-w-7xl mx-auto px-6"
+            >
+                {/* Newsletter Section */}
+                <div className="bg-[#1a1a1a] rounded-3xl p-8 md:p-12 border border-white/5 mb-16 flex flex-col md:flex-row items-center justify-between gap-8 shrink-0">
+                    <div className="md:w-1/2">
+                        <h3 className="text-2xl font-serif text-white mb-2">Rejoignez notre Newsletter</h3>
+                        <p className="text-white/60 text-sm">
+                            Recevez chaque mois des analyses de marché uniques, des opportunités d'investissement en avant-première et des conseils d'experts directement dans votre boîte mail.
+                        </p>
+                    </div>
+                    <div className="md:w-1/2 w-full">
+                        {isSubscribed ? (
+                            <div className="flex items-center gap-3 text-green-500 bg-green-500/10 px-6 py-4 rounded-xl border border-green-500/20">
+                                <CheckCircle className="w-6 h-6 shrink-0" />
+                                <span className="font-medium">Merci pour votre inscription !</span>
+                            </div>
+                        ) : (
+                            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+                                <input
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    placeholder="Votre adresse email"
+                                    required
+                                    className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-brand/50"
+                                />
+                                <button type="submit" className="bg-brand hover:bg-brand/90 text-black font-semibold rounded-xl px-6 py-3 transition-colors whitespace-nowrap">
+                                    S'abonner
+                                </button>
+                            </form>
+                        )}
+                    </div>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
 
                     {/* Brand Column */}
@@ -34,13 +85,13 @@ export function Footer() {
                             La plateforme de référence pour investir en Côte d'Ivoire.
                         </p>
                         <div className="flex gap-4">
-                            <a href="#" className="p-2 bg-white/5 hover:bg-white/10 rounded-full text-white/70 hover:text-white transition-colors">
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 rounded-full text-white/70 hover:text-white transition-colors">
                                 <Twitter className="w-5 h-5" />
                             </a>
-                            <a href="#" className="p-2 bg-white/5 hover:bg-white/10 rounded-full text-white/70 hover:text-white transition-colors">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 rounded-full text-white/70 hover:text-white transition-colors">
                                 <Github className="w-5 h-5" />
                             </a>
-                            <a href="#" className="p-2 bg-white/5 hover:bg-white/10 rounded-full text-white/70 hover:text-white transition-colors">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-white/10 rounded-full text-white/70 hover:text-white transition-colors">
                                 <Linkedin className="w-5 h-5" />
                             </a>
                         </div>
@@ -65,7 +116,7 @@ export function Footer() {
                         <h3 className="text-white font-medium mb-4">Contact</h3>
                         <ul className="flex flex-col gap-3">
                             <li>
-                                <a href="#" className="text-white/50 hover:text-white/90 text-sm transition-colors block">
+                                <a href="https://wa.me/22500000000" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white/90 text-sm transition-colors block">
                                     WhatsApp Business
                                 </a>
                             </li>
@@ -97,7 +148,7 @@ export function Footer() {
                         Système opérationnel
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </footer>
     );
 }

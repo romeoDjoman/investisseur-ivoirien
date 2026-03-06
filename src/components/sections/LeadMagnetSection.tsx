@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, CheckCircle } from 'lucide-react';
 
 const guides = [
     {
@@ -20,6 +21,17 @@ const guides = [
 ];
 
 export function LeadMagnetSection() {
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [isSuccess, setIsSuccess] = useState(false);
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (email && name) {
+            setIsSuccess(true);
+        }
+    };
+
     return (
         <section className="py-20 relative overflow-hidden border-t border-white/5 bg-[#141414]">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 blur-[100px] rounded-full pointer-events-none" />
@@ -36,8 +48,8 @@ export function LeadMagnetSection() {
                         className="flex-1 w-full"
                     >
                         <div className="flex items-center gap-3 mb-8 justify-center lg:justify-start">
-                            <BookOpen className="w-5 h-5 text-brand" />
-                            <h2 className="text-xl md:text-2xl font-serif text-white font-medium">Nos Guides Offerts</h2>
+                            <BookOpen className="w-5 h-5 text-brand relative z-10" />
+                            <h2 className="text-xl md:text-2xl font-serif text-white font-medium relative z-10">Guide PDF Gratuit (Valeur 25.000 FCFA)</h2>
                         </div>
 
                         <div className="flex flex-wrap justify-center lg:justify-start items-center gap-6">
@@ -80,30 +92,46 @@ export function LeadMagnetSection() {
                         <div className="bg-[#1a1a1a]/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
                             <div className="absolute -top-1/2 -right-1/2 w-64 h-64 bg-brand/20 blur-[50px] rounded-full pointer-events-none" />
 
-                            <h3 className="text-2xl font-serif text-white mb-2 relative z-10">Laissez-nous votre e-mail</h3>
-                            <p className="text-white/50 text-sm mb-6 relative z-10">
-                                Pour recevoir immédiatement vos 3 guides d'investissement et notre newsletter confidentielle.
+                            <h3 className="text-2xl font-serif text-white mb-2 relative z-10">Où vous envoyer le guide ?</h3>
+                            <p className="text-white/60 text-sm mb-6 relative z-10">
+                                Téléchargez <strong>"Les 5 pièges mortels avant d'acheter un terrain en Côte d'Ivoire"</strong>. Entrez votre email pour le recevoir instantanément dans votre boîte de réception.
                             </p>
 
-                            <form className="relative z-10 flex flex-col gap-4">
-                                <div className="space-y-1">
-                                    <input
-                                        type="text"
-                                        placeholder="Votre prénom"
-                                        className="w-full bg-white/5 border border-white/10 focus:border-brand/50 rounded-xl px-4 py-3 text-white placeholder:text-white/30 outline-none transition-colors"
-                                    />
+                            {isSuccess ? (
+                                <div className="relative z-10 flex flex-col items-center justify-center p-6 text-center h-full">
+                                    <CheckCircle className="w-12 h-12 text-brand mb-4" />
+                                    <h4 className="text-xl font-serif text-white mb-2">Guide en route !</h4>
+                                    <p className="text-white/70">
+                                        Vérifiez votre boîte de réception (et vos spams), le guide vous a été envoyé.
+                                    </p>
                                 </div>
-                                <div className="space-y-1">
-                                    <input
-                                        type="email"
-                                        placeholder="prenom@exemple.com"
-                                        className="w-full bg-white/5 border border-white/10 focus:border-brand/50 rounded-xl px-4 py-3 text-white placeholder:text-white/30 outline-none transition-colors"
-                                    />
-                                </div>
-                                <button type="button" className="w-full bg-white text-black hover:bg-brand font-medium rounded-xl px-4 py-3 mt-2 transition-colors">
-                                    Télécharger les guides
-                                </button>
-                            </form>
+                            ) : (
+                                <form onSubmit={handleSubmit} className="relative z-10 flex flex-col gap-4">
+                                    <div className="space-y-1">
+                                        <input
+                                            type="text"
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                            placeholder="Votre prénom"
+                                            required
+                                            className="w-full bg-white/5 border border-white/10 focus:border-brand/50 rounded-xl px-4 py-3 text-white placeholder:text-white/30 outline-none transition-colors"
+                                        />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <input
+                                            type="email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            placeholder="prenom@exemple.com"
+                                            required
+                                            className="w-full bg-white/5 border border-white/10 focus:border-brand/50 rounded-xl px-4 py-3 text-white placeholder:text-white/30 outline-none transition-colors"
+                                        />
+                                    </div>
+                                    <button type="submit" className="w-full bg-brand hover:bg-brand/90 text-black font-bold uppercase tracking-wide rounded-xl px-4 py-4 mt-2 transition-all shadow-[0_0_20px_rgba(249,168,37,0.3)] hover:scale-105">
+                                        Obtenir mon guide gratuit
+                                    </button>
+                                </form>
+                            )}
                             <p className="text-white/30 text-xs mt-4 text-center relative z-10">
                                 Pas de spam. Désabonnement à tout moment en un clic.
                             </p>
