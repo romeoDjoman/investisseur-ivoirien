@@ -24,7 +24,7 @@ export function HeroSection() {
                                 className="bg-brand py-6 pl-8 pr-12 w-fit mb-6"
                             >
                                 <h1 className="text-4xl md:text-5xl lg:text-7xl font-sans font-bold tracking-tight text-white leading-none uppercase">
-                                    COTE-D'<br />IVOIRE
+                                    Toutes les clés pour investir en<br />Côte d'Ivoire
                                 </h1>
                             </motion.div>
 
@@ -32,10 +32,14 @@ export function HeroSection() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2, duration: 0.8 }}
-                                className="text-lg md:text-xl text-white/80 max-w-xl"
+                                className="text-lg md:text-xl text-white/80 max-w-xl mb-8"
                             >
-                                L'Indépendance Financière. La plateforme qui vous donnera toutes les clefs dont vous avez besoin afin d'investir au pays.
+                                Formations, coaching et accompagnement sur mesure pour la diaspora et les résidents qui veulent investir intelligemment : immobilier, bourse, agriculture, entrepreneuriat et bien plus.
                             </motion.p>
+                            <div className="flex items-center gap-3 bg-white/10 w-fit px-4 py-2 rounded-full border border-white/20 select-none">
+                                <span className="text-brand">✦</span>
+                                <span className="text-sm text-white/90 font-medium">+ de 500 investisseurs accompagnés</span>
+                            </div>
                         </div>
                     </div>
 
@@ -43,11 +47,11 @@ export function HeroSection() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 lg:h-full">
                         {/* Card 1: Conférences */}
                         <Link to="/conferences" className="bg-white rounded-2xl overflow-hidden flex flex-col group h-full cursor-pointer">
-                            <div className="h-40 bg-[url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80')] bg-cover bg-center" />
+                            <div className="h-40 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80')] bg-cover bg-center" />
                             <div className="p-6 flex flex-col flex-1 items-center text-center justify-between">
                                 <div>
-                                    <h3 className="text-xl font-bold text-black mb-2 uppercase">Conférences</h3>
-                                    <p className="text-gray-600 text-sm">Réservez votre place dès maintenant !</p>
+                                    <h3 className="text-xl font-bold text-black mb-2 uppercase">Formations</h3>
+                                    <p className="text-gray-600 text-sm">Découvrir les formations</p>
                                 </div>
                                 <div className="mt-4 w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-brand transition-colors cursor-pointer">
                                     <span className="text-brand text-2xl font-light">→</span>
@@ -68,8 +72,8 @@ export function HeroSection() {
 
                             <div className="w-[55%] p-6 flex flex-col flex-1 items-center justify-between text-center bg-white z-10 h-full">
                                 <div>
-                                    <h3 className="text-lg font-bold text-black mb-2">Livret Gratuit</h3>
-                                    <p className="text-gray-600 text-[13px] leading-tight">10 bonnes raisons de devenir entrepreneur</p>
+                                    <h3 className="text-lg font-bold text-black mb-2">Prochaines Conférences</h3>
+                                    <p className="text-gray-600 text-[13px] leading-tight">Voir le calendrier et réserver sa place</p>
                                 </div>
                                 <div className="mt-4 w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-brand transition-colors cursor-pointer">
                                     <span className="text-brand text-2xl font-light">→</span>
@@ -86,67 +90,96 @@ export function HeroSection() {
                     transition={{ delay: 0.6, duration: 1 }}
                     className="mt-20 pt-10 border-t border-white/5"
                 >
-                    <div className="flex items-center justify-center gap-6 mb-12">
-                        <div className="h-[1px] bg-brand/50 flex-1 max-w-[200px]" />
-                        <h2 className="text-xl md:text-2xl font-medium text-brand uppercase tracking-wider text-center">
-                            L'Afrique Consciente
+                    <div className="flex flex-col items-center justify-center gap-4 mb-12">
+                        <h2 className="text-3xl md:text-4xl font-serif text-white text-center">
+                            Où souhaitez-vous investir ?
                         </h2>
-                        <div className="h-[1px] bg-brand/50 flex-1 max-w-[200px]" />
+                        <p className="text-white/60 text-center max-w-2xl">
+                            Choisissez votre secteur et accédez aux formations, guides et accompagnements dédiés.
+                        </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-                        {/* Formations Card */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+                        {/* Immobilier */}
                         <div className="bg-[#1a1a1a]/80 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden group hover:border-brand/50 transition-all flex flex-col">
-                            <div className="h-40 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80')] bg-cover bg-center brightness-75 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700" />
-                            <div className="p-6 flex flex-col flex-1 text-center bg-[#141414] relative z-10">
-                                <h3 className="text-xl font-bold text-white mb-4">Formations</h3>
-                                <p className="text-white/60 text-sm mb-8 flex-1 leading-relaxed">
-                                    Vous souhaitez <span className="font-semibold text-white">démarrer votre entreprise</span> ? Découvrez <span className="font-semibold text-white">les formations</span> que nous proposons.
+                            <div className="p-6 flex flex-col flex-1 bg-[#141414] relative z-10 gap-4">
+                                <div className="text-4xl">🏠</div>
+                                <h3 className="text-xl font-bold text-white">Immobilier</h3>
+                                <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                                    Achetez un terrain ou un bien en toute sécurité juridique
                                 </p>
-                                <Link to="/formations" className="w-full py-3 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-xl transition-colors duration-300 block">
-                                    Accéder
+                                <Link to="/investissements/immobilier" className="w-fit py-2 px-4 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-lg transition-colors duration-300">
+                                    Explorer
                                 </Link>
                             </div>
                         </div>
 
-                        {/* Coaching Card */}
+                        {/* Bourse */}
                         <div className="bg-[#1a1a1a]/80 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden group hover:border-brand/50 transition-all flex flex-col">
-                            <div className="h-40 bg-[url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80')] bg-cover bg-center brightness-75 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700" />
-                            <div className="p-6 flex flex-col flex-1 text-center bg-[#141414] relative z-10">
-                                <h3 className="text-xl font-bold text-white mb-4">Coaching</h3>
-                                <p className="text-white/60 text-sm mb-8 flex-1 leading-relaxed">
-                                    Profitez d'un <span className="font-semibold text-white">accompagnement personnalisé</span> pour approfondir vos connaissances.
+                            <div className="p-6 flex flex-col flex-1 bg-[#141414] relative z-10 gap-4">
+                                <div className="text-4xl">📈</div>
+                                <h3 className="text-xl font-bold text-white">Bourse & BRVM</h3>
+                                <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                                    Investissez sur les marchés financiers africains et internationaux
                                 </p>
-                                <Link to="/coaching" className="w-full py-3 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-xl transition-colors duration-300 block">
-                                    Découvrir
+                                <Link to="/investissements/bourse" className="w-fit py-2 px-4 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-lg transition-colors duration-300">
+                                    Explorer
                                 </Link>
                             </div>
                         </div>
 
-                        {/* Conférences Card */}
+                        {/* Agriculture */}
                         <div className="bg-[#1a1a1a]/80 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden group hover:border-brand/50 transition-all flex flex-col">
-                            <div className="h-40 bg-[url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80')] bg-cover bg-center brightness-75 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700" />
-                            <div className="p-6 flex flex-col flex-1 text-center bg-[#141414] relative z-10">
-                                <h3 className="text-xl font-bold text-white mb-4">Conférences</h3>
-                                <p className="text-white/60 text-sm mb-8 flex-1 leading-relaxed">
-                                    Investir au pays arrive chez vous. Consultez le calendrier des évènements et <span className="font-semibold text-white">réservez votre place</span>.
+                            <div className="p-6 flex flex-col flex-1 bg-[#141414] relative z-10 gap-4">
+                                <div className="text-4xl">🌾</div>
+                                <h3 className="text-xl font-bold text-white">Agriculture</h3>
+                                <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                                    Acquérez et valorisez des parcelles agricoles en Côte d'Ivoire
                                 </p>
-                                <Link to="/conferences" className="w-full py-3 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-xl transition-colors duration-300 block">
-                                    Réserver
+                                <Link to="/investissements/agriculture" className="w-fit py-2 px-4 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-lg transition-colors duration-300">
+                                    Explorer
                                 </Link>
                             </div>
                         </div>
 
-                        {/* Digitalisation Card */}
+                        {/* Élevage */}
                         <div className="bg-[#1a1a1a]/80 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden group hover:border-brand/50 transition-all flex flex-col">
-                            <div className="h-40 bg-[url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80')] bg-cover bg-center brightness-75 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700" />
-                            <div className="p-6 flex flex-col flex-1 text-center bg-[#141414] relative z-10">
-                                <h3 className="text-xl font-bold text-white mb-4">Digitalisation</h3>
-                                <p className="text-white/60 text-sm mb-8 flex-1 leading-relaxed">
-                                    Vous souhaitez <span className="font-semibold text-white">gagner en visibilité</span> ou <span className="font-semibold text-white">sponsoriser notre contenu</span> ? Contactez-nous !
+                            <div className="p-6 flex flex-col flex-1 bg-[#141414] relative z-10 gap-4">
+                                <div className="text-4xl">🐓</div>
+                                <h3 className="text-xl font-bold text-white">Élevage</h3>
+                                <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                                    Lancez une activité avicole, porcine ou bovine rentable
                                 </p>
-                                <Link to="/contact" className="w-full py-3 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-xl transition-colors duration-300 block">
-                                    Nous contacter
+                                <Link to="/formations" className="w-fit py-2 px-4 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-lg transition-colors duration-300">
+                                    Explorer
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Mobilité */}
+                        <div className="bg-[#1a1a1a]/80 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden group hover:border-brand/50 transition-all flex flex-col">
+                            <div className="p-6 flex flex-col flex-1 bg-[#141414] relative z-10 gap-4">
+                                <div className="text-4xl">🚗</div>
+                                <h3 className="text-xl font-bold text-white">Mobilité / VTC</h3>
+                                <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                                    Créez ou développez une activité de transport
+                                </p>
+                                <Link to="/investissements/mobilite" className="w-fit py-2 px-4 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-lg transition-colors duration-300">
+                                    Explorer
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Entrepreneuriat */}
+                        <div className="bg-[#1a1a1a]/80 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden group hover:border-brand/50 transition-all flex flex-col">
+                            <div className="p-6 flex flex-col flex-1 bg-[#141414] relative z-10 gap-4">
+                                <div className="text-4xl">💼</div>
+                                <h3 className="text-xl font-bold text-white">Entrepreneuriat</h3>
+                                <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                                    Structurez et financez votre projet d'entreprise
+                                </p>
+                                <Link to="/formations" className="w-fit py-2 px-4 bg-brand/10 hover:bg-brand text-brand hover:text-black font-semibold rounded-lg transition-colors duration-300">
+                                    Explorer
                                 </Link>
                             </div>
                         </div>
